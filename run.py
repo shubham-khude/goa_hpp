@@ -4,14 +4,11 @@ import config
 app = Flask(__name__)
 import logging
 import project_db
-##########################################################################
 ################ Root API ########################################
 @app.route('/')
 def index():
    return render_template('home.html')
-
 ####################### Register API #####################################
-
 @app.route('/register',methods = ['POST'])
 def register():
     print("Testing Login API")
@@ -30,7 +27,6 @@ def register():
     
     else:
         return jsonify({"Message":'Unsuccessful'})
-
 ####################### Login API #####################################
 @app.route('/login',methods = ['POST'])
 def login():
@@ -47,7 +43,6 @@ def login():
     
     else:
         return jsonify({"Message":'Unsuccessful'})
-
 ################# Location Name API ################################
 @app.route('/get_location_names')
 def get_location_names():
@@ -79,3 +74,5 @@ if __name__ == "__main__":
     print("House Price Prediction ")
     app.run(host='0.0.0.0', port=config.PORT_NUMBER,debug=False)
     ##########################################################################
+    ################# Location Name API ################################
+    ################# Location Name API ################################
